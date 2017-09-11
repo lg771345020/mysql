@@ -85,7 +85,7 @@ GROUP BY CASE country
 
 ```mysql
 SELECT country 国家, 
-CASE WHEN population>600 THEN '一' WHEN population>300 THEN '二' ELSE '三' END 人口等级 
+	CASE WHEN population>600 THEN '一' WHEN population>300 THEN '二' ELSE '三' END 人口等级 
 FROM test;
 
 结果： 
