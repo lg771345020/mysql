@@ -79,8 +79,15 @@ GROUP BY CASE country
 | 其他   |  700 |
 | 亚洲   | 1100 |
 +--------+------+
+```
 
-SELECT country 国家, CASE WHEN population>600 THEN '一' WHEN population>300 THEN '二' ELSE '三' END 人口等级 FROM test;
+根据人口数据划分等级，SQL如下：
+
+```mysql
+SELECT country 国家, 
+CASE WHEN population>600 THEN '一' WHEN population>300 THEN '二' ELSE '三' END 人口等级 
+FROM test;
+
 结果： 
 +--------+----------+
 | 国家   | 人口等级 |
