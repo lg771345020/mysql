@@ -1,4 +1,4 @@
-## MySQL常用的时间函数
+## MySQL一些常用的时间函数
 
 ### 一、获得当前时间
 
@@ -31,7 +31,7 @@ mysql> select now(), sleep(3), sysdate();
 
 ### 二、日期时间转换函数
 
-日期转换为字符串函数
+日期转换为字符串函数，日期格式详见：[mysql日期格式](2.1mysql日期格式.md)
 
 ```mysql
 ## 日期时间转化为字符串
@@ -81,6 +81,16 @@ time('yyyy-mm-dd hh:ii:ss') hh:ii:ss
 hour('yyyy-mm-dd hh:ii:ss') hh
 minute('yyyy-mm-dd hh:ii:ss') ii
 second('yyyy-mm-dd hh:ii:ss') ss
+```
+
+extract()从时间格式串中提取时间
+
+```mysql
+
+#提取天
+select extract(DAY from now());
+#提取天 小时 分钟 秒 
+select extract(DAY_SECOND from now());
 ```
 
 拼凑日期、时间函数
@@ -139,16 +149,6 @@ date_add(now(), interval "0001-02" YEAR_MONTH);
 select now() + interval 5 DAY, now() - interval 5 DAY
 #换成时间戳的运算是
 select unix_timestamp() + 5*24*60*60, unix_timestamp() - 5*24*60*60
-```
-
-extract()从时间格式串中提取时间
-
-```mysql
-
-#提取天
-select extract(DAY from now());
-#提取天 小时 分钟 秒 
-select extract(DAY_SECOND from now());
 ```
 
 datediff()返回两个时间点相差的天数
