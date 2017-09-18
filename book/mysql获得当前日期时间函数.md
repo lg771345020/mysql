@@ -175,3 +175,7 @@ select convert_tz('2008-08-08 12:00:00', '+08:00', '+00:00'); -- 2008-08-08 04:0
 select date_add('2008-08-08 12:00:00', interval -8 hour); -- 2008-08-08 04:00:00
 select date_sub('2008-08-08 12:00:00', interval 8 hour); -- 2008-08-08 04:00:00
 ```
+
+**参考：**
+
+1. [mysql加减时间-函数-时间加减](http://blog.csdn.net/yuxiayiji/article/details/7480785)
